@@ -35,8 +35,15 @@
   </form>
 
   <hr />
-
   <!-- TODO #4 - Loop over the search results to display all job fields. -->
+    <h2>Search Results</h2>
+
+    <!-- Iterate over the list of jobs -->
+    <table th:each="job : ${jobs}" class="job-listing">
+        <!-- Include the jobTable fragment for each job -->
+        <tr th:replace="list-jobs :: jobTable(job=${job})"></tr>
+    </table>
+
 
 </div>
 
